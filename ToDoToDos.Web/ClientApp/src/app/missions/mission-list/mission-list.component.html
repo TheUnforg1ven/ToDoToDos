@@ -1,0 +1,35 @@
+<div class="mb-1"> Sort by:
+  <button class="btn btn-secondary ml-1 mr-1" (click)="onSort(0)">Date to do</button>
+  <button class="btn btn-secondary  mr-1" (click)="onSort(1)">Creation date</button>
+  <button class="btn btn-secondary" (click)="onSort(2)">Importance level</button>
+  <button class="btn btn-success float-right" (click)="onSave()"><i class="fas fa-save"></i> Save</button>
+</div>
+
+<div class="input-group mb-1">
+  <input type="search" class="form-control py-2 border-right-0 border" placeholder="Look for your mission"
+    #myInput [(ngModel)]="name" (input)="searchMission(myInput.value)">
+</div>
+
+<cdk-drop (dropped)="onDrop($event)">
+  <ul id="sortable" class="list-group">
+      <li id="list-elem" class="list-group-item mb-1" [ngStyle]="isChanged(m.IsDone)" *ngFor="let m of service.list" draggable="true" cdkDrag>
+            <td class="col-md-6">
+                <h5 class="card-title" (click)="populateForm(m)">{{m.Name}}</h5>
+                <p class="card-text" (click)="populateForm(m)">{{m.Description}}</p>
+                <p class="card-text" (click)="populateForm(m)"><strong>Importance level:</strong> {{m.Importance}}</p>
+                <p class="card-text" (click)="populateForm(m)"><strong>Todo:</strong> {{m.DateToDo.toString().substring(0,10)}}</p>
+                <p class="card-text" (click)="populateForm(m)"><strong>Created:</strong> {{m.Created.toString().substring(0,10)}}</p>
+            </td>
+            <td class="col-md-1">
+              <div class="example-handle" cdkDragHandle>
+                    <i class="fas fa-arrows-alt fa-lg "></i>
+              </div>
+              <div>
+                <i class="fas fa-check fa-lg text-success mt-5" (click)="onSuccess(m)"></i>
+                <i class="fas fa-ban fa-lg text-danger mt-3" (click)="onUnSuccess(m)"></i>
+                <i class="card-title far fa-trash-alt fa-lg text-danger mt-3" style="text-align: right;" (click)="onDelete(m.MissionID)"></i>  
+              </div>
+            </td>
+      </li>
+  </ul>
+</cdk-drop>

@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand navbar-dark" style="background-color: #3c3d41;" role="navigation">
+    <a class="navbar-brand" routerLink="/landing">To-Do To-Dos</a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/landing">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/missions" (click)="onReload()">Missions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Profile</a>
+      </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" routerLink="/user/registration">Registration</a>
+      </li>-->
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="container"> 
+    <router-outlet></router-outlet>
+   <!--<app-missions></app-missions>-->
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small" style="background-color: #3c3d41; color: aliceblue;">
+
+  <div>
+    <div class="row py-1 d-flex align-items-center">
+    </div>
+  </div>
+
+  <div class="container text-center text-md-left mt-5">
+    <div class="row mt-3">
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit.</p>
+      </div>
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a  href="#!">MDBootstrap</a>
+        </p>
+        <p>
+          <a href="#!">MDWordPress</a>
+        </p>
+        <p>
+          <a href="#!">BrandFlow</a>
+        </p>
+        <p>
+          <a href="#!">Bootstrap Angular</a>
+        </p>
+      </div>
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Your Account</a>
+        </p>
+        <p>
+          <a href="#!">Become an Affiliate</a>
+        </p>
+        <p>
+          <a href="#!">Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a routerLink="/landing">To-Do To-Dos</a>
+  </div>
+</footer>
